@@ -1,0 +1,67 @@
+.carousel {
+    min-height: 740px;
+    padding: 81px 0;
+    &__inner {
+        position: relative;
+        width: 751px;
+        margin: 0 auto;
+    }
+    &__middle {
+        padding-top: 70px;
+        margin: 0 auto; 
+    }
+    .slick-prev, .slick-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -67px;
+        border: none;
+        background-color: #fff;
+        img {
+            width: 31px;
+            height: 50px;
+            transition: 0.2s all;
+            &:hover {
+                height: 54px;
+                width: 33px;
+            }
+        }
+    }
+    .slick-next {
+        right: -65px;
+        left: auto;
+    }
+    .dots-style {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+    }
+    .dots-style {
+        li {
+            list-style: none;
+        }
+        button {
+            background-color: rgba(105, 105, 105, 0.3);
+            border: none;
+            border-radius: 30%;
+            font-size: 0;
+            height: 8px;
+            width: 8px;
+            margin: 5px 40px;
+            outline: none;
+            &:hover {
+                background-color: black;
+            }
+        }
+    }
+    .dots-style li[class="slick-active"] button { //если у li будет атрибут slick-active, то для button применяются след стили
+        background-color: rgba(0, 0, 0, 0.8);
+        border: none;
+        &:hover {
+            transition: 0.9s all
+        }
+
+    }
+
+}
