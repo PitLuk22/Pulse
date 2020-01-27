@@ -16,9 +16,6 @@ $(document).ready(function () {
             }
         }]
     });
-
-    // Табы
-
     $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function () {
         $(this)
             .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
@@ -81,10 +78,7 @@ $(document).ready(function () {
     function validateForms(form) {
         $(form).validate({
             rules: {
-                name: {
-                    required: true,
-                    minlength: 2
-                },
+                name: 'required',
                 phone: 'required',
                 email: {
                     required: true,
@@ -92,10 +86,7 @@ $(document).ready(function () {
                 }
             },
             messages: {
-                name: { 
-                    required: "Пожалуйста, введите свое имя!",
-                    minlength: jQuery.validator.format("Введите {0} символа!")
-                },
+                name: "Пожалуйста, введите свое имя!",
                 phone: "Пожалуйста, введите свой номер телефона!",
                 email: {
                   required: "Пожалуйста, введите свой e-mail",
@@ -120,27 +111,11 @@ $(document).ready(function () {
             data: $(this).serialize()
         }).done(function() {
             $(this).find("input").val("");
-            $('#consultation, #order').fadeOut();
-            $('.overlay, #thanks').fadeIn('slow');
 
             $('form').trigger('reset');
         });
         return false;
     });
-
-    /* $('form').submit(function(e) {
-        e.preventDefault();
-        $.ajax({
-            type: "POST",
-            url: "mailer/smart.php",
-            data: $(this).serialize()
-        }).done(function() {
-            $(this).find("input").val("");
-
-            $('form').trigger('reset');
-        });
-        return false;
-    }); */
 
 
     //Smothscroll and pageup (Появление и исчезновение кнопки)
